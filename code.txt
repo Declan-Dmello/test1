@@ -1,0 +1,62 @@
+104. Pass a single element of an array to a function.
+
+#include <stdio.h>
+int display(int age1, int age2) {
+  printf("%d\n", age1);
+  printf("%d\n", age2);
+  return 0;
+}
+
+int main() {
+  int ageArray[] = {2, 8, 4, 12};
+
+  
+  display(ageArray[0], ageArray[1]); 
+  return 0;
+}
+
+Output 
+2
+8
+
+
+------------------
+(program exited with code: 0)
+
+Press any key to continue . . .
+
+
+105.Find the average age from a set of ages by passing the array to a function.
+
+#include <stdio.h>
+#include <stdlib.h>
+int average(int arr[]);  
+int main()
+{
+     int avg;
+     int arr[] = {20, 34, 45, 26, 58, 33}; 
+     avg = average(arr); 
+     printf("Average Age = %d\n",avg);
+     system("PAUSE"); 
+     return 0;
+}
+
+
+int average(int a[])
+{
+     int i;
+     int avg, sum=0; 
+     for(i=0;i<6;i++)
+     {
+       sum = sum + a[i];
+     }
+     avg = (sum/6);
+     return avg;
+}
+
+Output 
+
+Average Age = 36
+Press any key to continue . . .
+	
+106.Pass a 2- D Array to a function and display it
