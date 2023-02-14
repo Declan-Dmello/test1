@@ -1,0 +1,169 @@
+import java.util.Random;
+public class billing_system {
+
+	public static void main(String[] args) {
+		
+		
+		
+		
+		
+		String plane_class = "Economy";
+		String origin = "Goa";
+		String destination = "Kerala";
+		double total_fare ;
+		int airfare_charges; //base flight cost 
+		double total_GST;
+		double GST_from_state ; 
+		double GST_to_state  ; 
+		int user_development_fee ;
+		int convenience_fee ;
+		int aviation_security_fee; // per person
+		int total_fee ;
+	    int no_of_travellers = 3 ; 
+	    int discount_offer ;
+		double discounted_fare;
+		
+		
+		
+		
+		
+		System.out.println("This is the Billing Section");
+		System.out.println("\n\n\n");
+	
+		
+		
+	
+		
+		
+//use random to get random value from a list 
+		if (plane_class == "Economy")
+		{
+			
+			
+			int []  arr = new int [] {6000,5900,6400,7000};
+			airfare_charges = arr[new Random().nextInt(arr.length)] ; // random value 
+			total_fare =0 ;
+			total_GST= 0;
+			GST_from_state = airfare_charges * 0.05 ; 
+			GST_to_state = airfare_charges * 0.05 ; 
+			user_development_fee = 655;
+			convenience_fee = 700 ;
+			aviation_security_fee= 472; // per person
+			total_fee = 0 ;
+			discounted_fare=0;
+			
+			
+			
+			total_GST = GST_from_state + GST_to_state;
+			total_fee = aviation_security_fee + user_development_fee + convenience_fee;
+			total_fare = airfare_charges + total_GST  + total_fee ;
+			discounted_fare = total_fare;
+			
+			if (no_of_travellers >= 3)
+			{
+				discount_offer = 25;
+				discounted_fare =  total_fare * discount_offer/100;  
+				total_fare = total_fare - discounted_fare;
+			}
+			
+			
+			System.out.println("Airfare Charges         : "+ airfare_charges +".00");
+			System.out.println("User Development Fee    : "+ user_development_fee +".00");
+			System.out.println("Convenience Fee         : "+ convenience_fee +".00");
+			System.out.println("Aviation Security Fee   : "+ aviation_security_fee +".00");
+			System.out.println("GST of " +origin +"              : "+ GST_from_state+"0");
+			System.out.println("GST of " +destination +"           : "+ GST_to_state+"0");
+			System.out.println("Discount on Fare        : "+discounted_fare +"0");
+			System.out.println("---------------------------------------");
+			System.out.println("Total Fare              : "+total_fare +"0");
+		}
+			
+			
+		else if(plane_class == "Business Class")
+		{
+			
+			
+			int []  arr = new int [] {15600,12000,13400,14750};
+			airfare_charges = arr[new Random().nextInt(arr.length)] ; // random value 
+			total_fare =0 ;
+			total_GST= 0;
+			GST_from_state = airfare_charges * 0.10 ;  
+			GST_to_state = airfare_charges * 0.10 ; 
+			user_development_fee = 800;
+			convenience_fee = 900 ;
+			aviation_security_fee= 560; // per person
+			total_fee = 0 ;
+			discounted_fare=0;
+			
+			
+			
+			total_GST = GST_from_state + GST_to_state;
+			total_fee = aviation_security_fee + user_development_fee + convenience_fee;
+			total_fare = airfare_charges + total_GST  + total_fee ;
+			
+			if (no_of_travellers >= 3)
+			{
+				discount_offer = 25;
+				discounted_fare =  total_fare * discount_offer/100;  
+				total_fare = total_fare - discounted_fare;
+			}
+			
+			
+			System.out.println("Airfare Charges         : "+ airfare_charges +".00");
+			System.out.println("User Development Fee    : "+ user_development_fee +".00");
+			System.out.println("Convenience Fee         : "+ convenience_fee +".00");
+			System.out.println("Aviation Security Fee   : "+ aviation_security_fee +".00");
+			System.out.println("GST of " +origin +"              : "+ GST_from_state+"0");
+			System.out.println("GST of " +destination +"           : "+ GST_to_state+"0");
+			System.out.println("Discount on Fare        : "+discounted_fare +"0");
+
+			System.out.println("---------------------------------------");
+			System.out.println("Total Fare              : "+total_fare +"0");
+			
+		}	
+		
+		
+		else if (plane_class == "First Class")
+		{
+		
+			int []  arr = new int [] {25000,22000,29000,31000};
+			airfare_charges = arr[new Random().nextInt(arr.length)] ; // random value 
+			total_fare =0 ;
+			total_GST= 0;
+			GST_from_state = airfare_charges * 0.12 ;  
+			GST_to_state = airfare_charges * 0.12 ;  
+			user_development_fee = 900;
+			convenience_fee = 1200 ;
+			aviation_security_fee= 850; // per person
+			total_fee = 0 ;
+			discounted_fare=0;
+			
+			
+			
+			total_GST = GST_from_state + GST_to_state;
+			total_fee = aviation_security_fee + user_development_fee + convenience_fee;
+			total_fare = airfare_charges + total_GST  + total_fee ;
+			
+			if (no_of_travellers >= 3)
+			{
+				discount_offer = 25;
+				discounted_fare =  total_fare * discount_offer/100;  
+				total_fare = total_fare - discounted_fare;
+			}
+			
+			
+			System.out.println("Airfare Charges         : "+ airfare_charges +".00");
+			System.out.println("User Development Fee    : "+ user_development_fee +".00");
+			System.out.println("Convenience Fee         : "+ convenience_fee +".00");
+			System.out.println("Aviation Security Fee   : "+ aviation_security_fee +".00");
+			System.out.println("GST of " +origin +"              : "+ GST_from_state+"0");
+			System.out.println("GST of " +destination +"           : "+ GST_to_state+"0");
+			System.out.println("Discount on Fare        : "+discounted_fare +"0");
+
+			System.out.println("---------------------------------------");
+
+			System.out.println("Total Fare              : "+total_fare +"0");
+		}
+	}
+	}
+
